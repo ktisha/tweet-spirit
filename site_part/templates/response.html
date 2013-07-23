@@ -1,3 +1,4 @@
+{% load i18n %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,10 +8,9 @@
 <body>
 <br/>
 
-{{% for tweet in tweets %}
-{{ tweet }}<br/>
+{% for tweet in tweets %}
+{{ tweet.text }} <b>{% trans 'Positive:' %} {{ tweet.pos }}{% trans ', negative' %} {{ tweet.neg }}</b><br/>
 {% endfor %}
-
 
 </body>
 </html>
